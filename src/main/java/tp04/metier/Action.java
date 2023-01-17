@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+
 package tp04.metier;
 
 import java.util.Objects;
