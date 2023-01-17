@@ -7,6 +7,9 @@
 # documentation.
 
 name: Java CI with Maven
+env:
+  GITHUB_TOKEN: ${{ secrets.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 }}
+  SONAR_TOKEN: ${{ secrets.896ffd896833405d2b7e7feef03964f7950f2e6a }}
 
 on:
   push:
@@ -33,3 +36,10 @@ jobs:
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
+    
+    - name: Sonar with Maven
+      run: mvn verify sonar:sonar --file pom.xml
+    - name: Check Javadoc
+      run: mvn javadoc:javadoc --file pom.xml
+    - name: Check Licences
+      run: mvn apache-rat:check --file pom.xml
