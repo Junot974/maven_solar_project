@@ -8,8 +8,8 @@
 
 name: Java CI with Maven
 env:
-  GITHUB_TOKEN: ${{ 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 }}
-  SONAR_TOKEN: ${{ 896ffd896833405d2b7e7feef03964f7950f2e6a }}
+  GITHUB_TOKEN: ${{ "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" }}
+  SONAR_TOKEN: ${{ "896ffd896833405d2b7e7feef03964f7950f2e6a" }}
 
 on:
   push:
